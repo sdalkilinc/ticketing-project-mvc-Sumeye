@@ -6,6 +6,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
+//we need to create pojos, bc everything in the application is object.
+
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
