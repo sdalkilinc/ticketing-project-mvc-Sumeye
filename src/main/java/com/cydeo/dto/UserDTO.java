@@ -10,6 +10,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class UserDTO {
 
+    //In the applications, most of the times, we want to save something in the database that
+    //we don't want to show in the UI
+    //DTO=Data Transfer Objects
+
     private String firstName;
     private String lastName;
     private String userName;
