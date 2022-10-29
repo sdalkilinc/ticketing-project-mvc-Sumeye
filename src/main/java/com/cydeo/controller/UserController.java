@@ -58,12 +58,11 @@ public class UserController {
 
     @PostMapping("/update")
     public String updateUser(@ModelAttribute("user") UserDTO user){
-
-
+        //With latest update, we even don't need to put @ModelAttribute("user")
+        //bc springboot is enough smart to understand
         userService.update(user);
 
         return "redirect:/user/create";
     }
-
 
 }
