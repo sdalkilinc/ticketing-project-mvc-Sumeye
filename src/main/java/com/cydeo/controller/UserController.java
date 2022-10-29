@@ -37,6 +37,7 @@ public class UserController {
     public String insertUser(@ModelAttribute("user") UserDTO user){
 
 
+        userService.save(user);
 
         return "redirect:/user/create";
         //if we use redirect in here, we don't need to repeat the calling methods
@@ -55,6 +56,13 @@ public class UserController {
         return "/user/update";
     }
 
+    @PostMapping("/update")
+    public String updateUser(){
+
+
+
+        return "redirect:/user/create";
+    }
 
 
 }
