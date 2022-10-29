@@ -30,4 +30,8 @@ public class User extends BaseEntity{
         this.role = role;
         this.gender = gender;
     }
+
+    public String getPassWord() {
+        return passWord;
+    }
 }
