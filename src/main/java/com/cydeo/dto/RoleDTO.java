@@ -9,7 +9,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class RoleDTO {
 
-    //10.video 1.07 dakika
     private Long id;
     private String description;
 
