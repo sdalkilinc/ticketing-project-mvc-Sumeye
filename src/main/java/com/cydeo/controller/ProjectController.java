@@ -8,9 +8,7 @@ import com.cydeo.service.ProjectService;
 import com.cydeo.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/project")
@@ -40,13 +38,20 @@ public class ProjectController {
     @PostMapping("/create")
     public String insertProject(@ModelAttribute("project") ProjectDTO project){
 
-
-
         projectService.save(project);
 
         return "redirect:/project/create";
         //to create this save method, we need to go create.html page first and edit the form button
         //by adding end point and passing the method kind(post or get)
     }
+
+    @GetMapping("/delete/{projectCode}")
+    public String deleteProject(@PathVariable("projectCode") String projectCode){
+
+        projectService.deleteById(projectCode);
+
+        return "redirect:/project/create";
+    }
+
 
 }
