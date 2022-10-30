@@ -26,6 +26,4 @@ public class ProjectDTO {
     private String projectDetail;
     private Status projectStatus;
 
-
-
 }
