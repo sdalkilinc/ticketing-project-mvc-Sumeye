@@ -62,5 +62,10 @@ public class TaskController {
         return "/task/update";
     }
 
+    @PostMapping("/update/{taskId}")
+    public String updateTask(){
+
+        return "redirect:/task/create";
+    }
 
 }
