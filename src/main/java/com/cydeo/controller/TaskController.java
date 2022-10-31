@@ -74,7 +74,9 @@ public class TaskController {
     public String updateTask(TaskDTO task){
 
         taskService.update(task);
+
         return "redirect:/task/create";
+
     }
 
 
