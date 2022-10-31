@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class TaskServiceImpl extends AbstractMapService<TaskDTO, Long> implements TaskService{
@@ -17,6 +18,8 @@ public class TaskServiceImpl extends AbstractMapService<TaskDTO, Long> implement
             task.setTaskStatus(Status.OPEN);
         if(task.getAssignedDate() == null)
             task.setAssignedDate(LocalDate.now());
+        if(task.getId()==null)
+            task.setId(UUID.randomUUID().getMostSignificantBits());
         return super.save(task.getId(), task);
     }
 
