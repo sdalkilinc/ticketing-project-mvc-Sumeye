@@ -44,6 +44,7 @@ public class TaskServiceImpl extends AbstractMapService<TaskDTO, Long> implement
     public void update(TaskDTO task) {
 
         TaskDTO foundTask = findById(task.getId());
+
         task.setTaskStatus(foundTask.getTaskStatus());
         task.setAssignedDate(foundTask.getAssignedDate());
 
@@ -67,5 +68,11 @@ public class TaskServiceImpl extends AbstractMapService<TaskDTO, Long> implement
     public List<TaskDTO> findAllTasksByStatus(Status status) {
         return findAll().stream().filter(task -> task.getTaskStatus().equals(status))
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public void updateStatus(TaskDTO task) {
+        findById(task.getId()).setTaskStatus(task.getTaskStatus()); //First, status is updated
+        update(task); //Second, task is updated with the new status information
     }
 }
