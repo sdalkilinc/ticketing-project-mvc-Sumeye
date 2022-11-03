@@ -79,6 +79,11 @@ public class TaskController {
 
     }
 
+    @GetMapping("/employee/pending-tasks")
+    public String employeePendingTasks(){
+
+        return "/task/pending-tasks";
+    }
 
 
 }
