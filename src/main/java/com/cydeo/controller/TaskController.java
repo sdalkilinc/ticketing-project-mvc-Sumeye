@@ -5,6 +5,7 @@ import com.cydeo.enums.Status;
 import com.cydeo.service.ProjectService;
 import com.cydeo.service.TaskService;
 import com.cydeo.service.UserService;
+import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -86,6 +87,14 @@ public class TaskController {
         model.addAttribute("tasks",taskService.findAllTasksByStatusIsNot(Status.COMPLETE));
 
         return "/task/pending-tasks";
+    }
+
+    @GetMapping("/employee/archive")
+    public String employeeArchivedTasks(Model model){
+
+        model.addAttribute("tasks",taskService.findAllTasksByStatus(Status.COMPLETE));
+
+        return "/task/archive";
     }
 
 
