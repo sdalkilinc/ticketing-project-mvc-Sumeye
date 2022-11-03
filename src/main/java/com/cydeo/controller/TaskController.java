@@ -97,5 +97,12 @@ public class TaskController {
         return "/task/archive";
     }
 
+    @GetMapping("/employee/edit/{id}")
+    public String employeeEditTask(@PathVariable Long id, Model model){
+        model.addAttribute("task", taskService.findById(id));
+        model.addAttribute("projects", projectService.findAll());
+        model.addAttribute("employees", userService.findEmployees());
+        return "/task/status-update";
+    }
 
 }
