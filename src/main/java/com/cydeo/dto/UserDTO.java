@@ -38,9 +38,9 @@ public class UserDTO {
     @Pattern(regexp = "^\\d{10}$")
     private String phone;
 
-    @NotNull
+//    @NotNull
     private RoleDTO role;
 
-    @NotNull
+//    @NotNull
     private Gender gender;
 }
