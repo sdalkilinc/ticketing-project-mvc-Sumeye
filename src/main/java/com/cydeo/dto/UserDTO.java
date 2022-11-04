@@ -38,9 +38,12 @@ public class UserDTO {
     @Pattern(regexp = "^\\d{10}$")
     private String phone;
 
-//    @NotNull
+    @NotNull
+// For the one below, we can not use @NotBlank and @NotEmpty, bc these ones are for String variables
     private RoleDTO role;
 
-//    @NotNull
+    @NotNull
     private Gender gender;
+
+
 }
